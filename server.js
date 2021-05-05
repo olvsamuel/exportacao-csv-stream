@@ -205,7 +205,7 @@ app.get('/csv-sql-xlsx', async (req, res) => {
 
     // insere em um doc auxiliar no mongo que há uma exportação em andamento
     // é um "log"
-    const processamento = await ProcessamentoModel.create({
+    const processamento = await MongoVerificacaoModel.create({
       processando: true,
       data: moment().toISOString(),
       arquivo: `arquivo-${timestamp}.csv`,
@@ -232,7 +232,7 @@ app.get('/csv-sql-xlsx', async (req, res) => {
       const finalizado = (tempoFinal - tempoInicio) / 1000
 
       //atualizando arquivo de log criado no mongo
-      const processamentoFinal = await ProcessamentoModel.updateOne({ 
+      const processamentoFinal = await MongoVerificacaoModel.updateOne({ 
         _id: processamento._id 
       }, {
         processando: false, 

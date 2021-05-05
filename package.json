@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "exceljs": "^4.2.1",
+    "express": "^4.17.1",
+    "fast-csv": "^2.5.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.5",
+    "mssql": "^6.3.1",
+    "nodemon": "^2.0.7",
+    "xlsx-rw": "^1.0.8"
+  }
+}
